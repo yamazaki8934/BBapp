@@ -1,0 +1,68 @@
+<%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'col-xs-3 btn btn-default pull-right', style:'color: black;' %>
+<%= link_to '入力ページへ', edit_user_path(current_user.id), method: :get, class:'col-xs-3 btn btn-default pull-left', style:'color: black;' %>
+
+<div class="container">
+  <div class="page-header">
+    成績
+  </div>
+  <div class="rank">
+    <div class="col-xs-6">
+      打率
+    </div>
+    <div class="col-xs-6">
+      <% @averages.each do |average| %>
+      <div class="col-xs-6">
+        <%= average.username %>
+      </div>
+      <div class="col-xs-6">
+        <%= average.average %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="rank">
+    <div class="col-xs-6">
+      安打数
+    </div>
+    <div class="col-xs-6">
+      <% @hits.each do |hit| %>
+      <div class="col-xs-6">
+        <%= hit.username %>
+      </div>
+      <div class="col-xs-6">
+        <%= hit.hits %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="rank">
+    <div class="col-xs-6">
+      打点
+    </div>
+    <div class="col-xs-6">
+      <% @scores.each do |score| %>
+      <div class="col-xs-6">
+        <%= score.username %>
+      </div>
+      <div class="col-xs-6">
+        <%= score.scores %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="rank">
+    <div class="col-xs-6">
+      盗塁
+    </div>
+    <div class="col-xs-6">
+      <% @steals.each do |steal| %>
+      <div class="col-xs-6">
+        <%= steal.username %>
+      </div>
+      <div class="col-xs-6">
+        <%= steal.steals %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

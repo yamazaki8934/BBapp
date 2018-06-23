@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  games: 1
+  bats: 1
+  hits: 1
+  scores: 1
+  longhits: 1
+  steals: 1
+
+two:
+  games: 1
+  bats: 1
+  hits: 1
+  scores: 1
+  longhits: 1
+  steals: 1

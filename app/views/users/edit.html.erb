@@ -1,0 +1,41 @@
+<body>
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'col-xs-3 btn btn-default pull-right', style:'color: black;' %>
+  <%= link_to '成績一覧へ', toppage_index_path, method: :get, class:'col-xs-3 btn btn-default pull-left', style:'color: black;' %>
+
+  <div class="container">
+    <div class="page-header">
+      あなたの成績を入力してください
+    </div>
+      <%= form_for(current_user) do |f| %>
+      <div class="col-xs-6">
+        <div class="form-group">
+          <label for="games" class="col-xs-6">試合数</label>
+          <%= f.text_field :games, :placeholder => "試合数", :type => 'number', :class => 'col-xs-7 form-control', :id => 'games' %>
+        </div>
+        <div class="form-group">
+          <label for="bats" class="col-xs-6">打席数</label>
+          <%= f.text_field :bats, :placeholder => "打席数", :type => 'number', :class => 'col-xs-7 form-control', :id => 'bats' %>
+        </div>
+        <div class="form-group">
+          <label for="hits" class="col-xs-6">安打数</label>
+          <%= f.text_field :hits, :placeholder => "安打数", :type => 'number', :class => 'col-xs-7 form-control', :id => 'hits' %>
+        </div>
+        <div class="form-group">
+          <label for="scores" class="col-xs-6">打点</label>
+          <%= f.text_field :scores, :placeholder => "打点", :type => 'number', :class => 'col-xs-7 form-control', :id => 'scores' %>
+        </div>
+        <div class="form-group">
+          <label for="longhits" class="col-xs-6">長打数</label>
+          <%= f.text_field :longhits, :placeholder => "長打数", :type => 'number', :class => 'col-xs-7 form-control', :id => 'longhits' %>
+        </div>
+        <div class="form-group">
+          <label for="steals" class="col-xs-6">盗塁数</label>
+          <%= f.text_field :steals, :placeholder => "盗塁数", :type => 'number', :class => 'col-xs-7 form-control', :id => 'steals' %>
+        </div>
+        <div class="form-group">
+          <%= f.submit '登録', :class=>"btn btn-default col-xs-6" %>
+        </div>
+      </div>
+      <% end %>
+  </div>
+</body>
